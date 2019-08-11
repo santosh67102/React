@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import AppStyle from "./App.css";
-import Person from "./Components/Person";
+import Person from "../components/Persons/Person/Person";
 
 class App extends Component {
   state = {
@@ -20,7 +20,9 @@ class App extends Component {
     const person = {
       ...this.state.persons[personIndex]
     }; //const person = Object.assign({}, this.state.persons[personIndex])  this is if we are not using spread.. to assign another similar object.. primitive method
+    
     person.name = event.target.value;
+
     const persons = [...this.state.persons];
     persons[personIndex] = person;
     this.setState({ persons: persons });
